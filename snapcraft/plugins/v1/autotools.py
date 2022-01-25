@@ -106,7 +106,7 @@ class AutotoolsPlugin(make.MakePlugin):
                 # Make sure it's executable.
                 if not os.access(script, os.X_OK):
                     script.chmod(0o755)
-                self.run(["env", "NOCONFIGURE=1", script])
+                self.run(["env", "NOCONFIGURE=1", str(script)])
 
         configure_command = ["./configure"]
 
